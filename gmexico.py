@@ -17,13 +17,13 @@ st.title("Probabilidad Bayesiana diaria: GMEXICOB vs Cobre")
 ticker_stock = "GMEXICOB.MX"
 ticker_copper = "HG=F"
 
-start = st.date_input("Inicio", pd.to_datetime("2018-01-01"))
+start = st.date_input("Inicio", pd.to_datetime("2024-01-01"))
 end = st.date_input("Fin", pd.to_datetime("today"))
 
 window = st.slider("Ventana de cálculo (días)", 30, 252, 120)
 
 # Descargar datos
-data = yf.download([ticker_stock, ticker_copper], start=start, end=end)["Adj Close"]
+data = yf.download([ticker_stock, ticker_copper], start=start, end=end)["Close"]
 data = data.dropna()
 
 data.columns = ["GMEXICO", "COPPER"]
