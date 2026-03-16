@@ -57,7 +57,7 @@ st.line_chart(returns["P_G_given_H"])
 
 st.subheader("Precios")
 
-st.line_chart(data)
+st.line_chart(data.columns = ["COPPER"]*10,data.columns = ["GMEXICO"])
 
 st.subheader("Últimos datos")
 
